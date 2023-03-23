@@ -85,14 +85,21 @@ namespace SmsAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Student>> PostStudent(Student student)
         {
-          if (_context.Students == null)
-          {
-              return Problem("Entity set 'APIDbContext.Students'  is null.");
-          }
-            _context.Students.Add(student);
-            await _context.SaveChangesAsync();
+            try
+            {
+                if (_context.Students == null)
+                {
+                    return Problem("Entity set 'APIDbContext.Students'  is null.");
+                }
+                _context.Students.Add(student);
+                await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetStudent", new { id = student.SID }, student);
+                return CreatedAtAction("GetStudent", new { id = student.SID }, student);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         // DELETE: api/Student/5

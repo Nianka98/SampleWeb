@@ -8,55 +8,53 @@
             <from class="row g-3">
                 <div class="col-md-5">
                     <label for="inputEmail4" class="form-label">Student Name</label>
-                    <input type="text" class="form-control" id="StNameTb" runat="server">
+                    <asp:TextBox ID="txtName" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="col-md-5">
                     <label for="inputState" class="form-label">Gender</label>
-                    <select id="GenCb" runat="server" class="form-select">
-                        <option selected="selected">Choose...</option>
-                        <option>...</option>
-                        <option>Male</option>
-                        <option>Female</option>
-                    </select>
+                    <asp:DropDownList ID="ddlGender" runat="server" CssClass="form-control">
+                        <asp:ListItem>Male</asp:ListItem>
+                        <asp:ListItem>Female</asp:ListItem>
+                    </asp:DropDownList>
                 </div>
                 <div class="col-5">
                     <label for="inputAddress" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="AddressTb" runat="server">
+                    <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="col-md-5">
                     <label for="inputCity" class="form-label">City</label>
-                    <input type="text" class="form-control" id="CityTb" runat="server">
+                   <asp:TextBox ID="txtCity" runat="server" CssClass="form-control"></asp:TextBox>
+                    
                 </div>
                 <div class="col-md-5">
                     <label for="inputState" class="form-label">Grade</label>
-                    <select id="GradeTb" class="form-select" runat="server">
-                        <option selected="selected">Choose...</option>
-                        <option>...</option>
-                        <option>1-5</option>
-                        <option>6-11</option>
-                        <option>12-13</option>
-                    </select>
+                    <asp:DropDownList ID="ddlGrade" runat="server" CssClass="form-control">
+                        <asp:ListItem>1-5</asp:ListItem>
+                        <asp:ListItem>6-11</asp:ListItem>
+                        <asp:ListItem>12-13</asp:ListItem>
+                    </asp:DropDownList>
                 </div>
 
                 <div class="row mt-3">
                     <label id="ErrMsg" class="text-danger text-center" runat="server"></label>
 
                     <div class="col-2 d-grid">
-                        <asp:Button ID="Addbtn" runat="server" Text="ADD" />
+                        <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
                     </div>
                     <div class="col-2 d-grid">
-                       <asp:Button ID="UpdateBtn" runat="server" Text="UPDATE" />
+                       <asp:Button ID="btnUpdate" runat="server" Text="UPDATE" />
+                      
+                        
                       
                     </div>
                        <div class="col-2 d-grid">
-                       <asp:Button ID="DeleteBtn" runat="server" Text="Button" />
+                       <asp:Button ID="btnDelete" runat="server" Text="Delete" />
                       
                     </div>
-              <%--  </div>
+                    <%--  </div>
                 <div class="col-2 d-grid">
                     <button type="submit" class="btn btn-primary">Create</button>
-                </div>--%>
-           <%--       <div class="col-4 d-grid">
+                </div>--%>           <%--       <div class="col-4 d-grid">
       
       <asp:Button ID="AddBtn" runat="server" Text="Add Student" class="btn btn-primary btn-block" OnClick="Create" />
   </div>--%>
