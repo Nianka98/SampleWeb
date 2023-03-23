@@ -1,5 +1,6 @@
 ﻿using Sms.Services;
 using System;
+using System.Web.DynamicData;
 
 namespace Sms.Views.Admin
 {
@@ -10,6 +11,7 @@ namespace Sms.Views.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack) { getStudents(); }
+  
         }
 
         private void getStudents()
@@ -17,5 +19,6 @@ namespace Sms.Views.Admin
             StudentsList.DataSource = studentService.GetStudents();
             StudentsList.DataBind();
         }
+
     }
 }

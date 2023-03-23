@@ -42,22 +42,25 @@
                     <label id="ErrMsg" class="text-danger text-center" runat="server"></label>
 
                     <div class="col-2 d-grid">
-                        <button type="submit" class="btn btn-primary">View</button>
+                        <asp:Button ID="Addbtn" runat="server" Text="ADD" />
                     </div>
                     <div class="col-2 d-grid">
-                        <button type="submit" class="btn btn-primary">Update</button>
+                       <asp:Button ID="UpdateBtn" runat="server" Text="UPDATE" />
+                      
                     </div>
-                </div>
+                       <div class="col-2 d-grid">
+                       <asp:Button ID="DeleteBtn" runat="server" Text="Button" />
+                      
+                    </div>
+              <%--  </div>
                 <div class="col-2 d-grid">
                     <button type="submit" class="btn btn-primary">Create</button>
-                </div>
-                <%--  <div class="col-4 d-grid">
+                </div>--%>
+           <%--       <div class="col-4 d-grid">
       
       <asp:Button ID="AddBtn" runat="server" Text="Add Student" class="btn btn-primary btn-block" OnClick="Create" />
   </div>--%>
-                <div class="col-2 d-grid">
-                    <button type="submit" class="btn btn-primary">Delete</button>
-                </div>
+          
         </div>
         </from>
     </div>
