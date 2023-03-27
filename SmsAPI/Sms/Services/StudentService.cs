@@ -27,6 +27,23 @@ namespace Sms.Services
             return students;
         }
 
+        public Student GetStudent(int studentID)
+        {
+            Student student = new Student();
+            using (HttpClient client = new HttpClient())
+            {
+                string path = "Student/" + studentID;
+                client.BaseAddress = new Uri(GlobalVariables.WebApiUrl);
+                HttpResponseMessage response = client.GetAsync(path).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    var value = response.Content.ReadAsStringAsync().Result;
+                    student = JsonConvert.DeserializeObject<Student>(value);
+                }
+            }
+            return student;
+        }
+
         public WebApiResponse AddStudent(Student student)
         {
             WebApiResponse webApiResponse = new WebApiResponse();

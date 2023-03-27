@@ -9,6 +9,7 @@
             <from class="col-md-5">
                 <table>
                     <td>
+    <asp:HiddenField ID="hfID" runat="server" />
                         <div class="mb-2">
                             <label for="inputEmail4" class="form-label">Student Name</label>
                             <asp:TextBox ID="txtName" runat="server" CssClass="form-control" Width="386px"></asp:TextBox>
@@ -45,7 +46,7 @@
                                 <asp:Button Style="background-color: #3e82ff;" ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" Width="84px" />
                             </div>
                             <div class="col-3 d-grid">
-                                <asp:Button Style="background-color: #3e82ff;" ID="btnUpdate" runat="server" Text="UPDATE" Width="83px" />
+                                <asp:Button Style="background-color: #3e82ff;" ID="btnUpdate" runat="server" Text="UPDATE" Width="83px" OnClick="btnUpdate_Click" />
 
                             </div>
                             <div class="col-3 d-grid">
@@ -61,7 +62,26 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <h5 class="text-center">Student List </h5>
-                                    <asp:GridView ID="StudentsList" class="table table-hover" runat="server" Width="680px"></asp:GridView>
+                                    <asp:GridView ID="StudentsList" class="table table-hover" runat="server" Width="680px" AutoGenerateColumns="False" OnRowCommand="StudentsList_RowCommand">
+                                        <Columns>
+                                            <asp:TemplateField HeaderText="SID" Visible="False">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="lblgvID" runat="server" Text='<%# Bind("SID") %>'></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:BoundField DataField="SName" HeaderText="Name" />
+                                            <asp:BoundField DataField="Gender" HeaderText="Gender" />
+                                            <asp:BoundField DataField="SAddress" HeaderText="Address" />
+                                            <asp:BoundField DataField="City" HeaderText="City" />
+                                            <asp:BoundField DataField="Grade" HeaderText="Grade" />
+                                            <asp:TemplateField>
+                                                <ItemTemplate>
+                                                    <asp:Button ID="btngvEdit" runat="server" Text="Edit" CommandName="EditData"
+                                                        CommandArgument="<%#Container.DisplayIndex %>" />
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                        </Columns>
+                                    </asp:GridView>
                                 </div>
                             </div>
                         </div>

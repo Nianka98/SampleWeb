@@ -51,14 +51,9 @@ namespace SmsAPI.Controllers
 
         // PUT: api/Student/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutStudent(int id, Student student)
+        [HttpPut]
+        public async Task<IActionResult> PutStudent(Student student)
         {
-            if (id != student.SID)
-            {
-                return BadRequest();
-            }
-
             _context.Entry(student).State = EntityState.Modified;
 
             try
@@ -67,7 +62,7 @@ namespace SmsAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!StudentExists(id))
+                if (!StudentExists(student.SID))
                 {
                     return NotFound();
                 }
