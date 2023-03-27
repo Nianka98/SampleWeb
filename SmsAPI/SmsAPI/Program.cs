@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 
 //Dependency Injection of DbContext Class
 builder.Services.AddDbContext<APIDbContext>(options =>
-options.UseSqlServer(builder.Configuration.GetConnectionString("DockerConnection")));
+options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection")));
 
 var app = builder.Build();
 

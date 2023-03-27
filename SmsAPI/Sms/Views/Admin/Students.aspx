@@ -3,68 +3,75 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Mybody" runat="server">
+    <link rel="stylesheet" href="../../Assets/Lib/css/bootstrap.min.css">
     <div class="container-fluid">
         <div class="row">
-            <from class="row g-3">
-                <div class="col-md-5">
-                    <label for="inputEmail4" class="form-label">Student Name</label>
-                    <asp:TextBox ID="txtName" runat="server" CssClass="form-control"></asp:TextBox>
-                </div>
-                <div class="col-md-5">
-                    <label for="inputState" class="form-label">Gender</label>
-                    <asp:DropDownList ID="ddlGender" runat="server" CssClass="form-control">
-                        <asp:ListItem>Male</asp:ListItem>
-                        <asp:ListItem>Female</asp:ListItem>
-                    </asp:DropDownList>
-                </div>
-                <div class="col-5">
-                    <label for="inputAddress" class="form-label">Address</label>
-                    <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control"></asp:TextBox>
-                </div>
-                <div class="col-md-5">
-                    <label for="inputCity" class="form-label">City</label>
-                   <asp:TextBox ID="txtCity" runat="server" CssClass="form-control"></asp:TextBox>
-                    
-                </div>
-                <div class="col-md-5">
-                    <label for="inputState" class="form-label">Grade</label>
-                    <asp:DropDownList ID="ddlGrade" runat="server" CssClass="form-control">
-                        <asp:ListItem>1-5</asp:ListItem>
-                        <asp:ListItem>6-11</asp:ListItem>
-                        <asp:ListItem>12-13</asp:ListItem>
-                    </asp:DropDownList>
-                </div>
+            <from class="col-md-5">
+                <table>
+                    <td>
+                        <div class="mb-2">
+                            <label for="inputEmail4" class="form-label">Student Name</label>
+                            <asp:TextBox ID="txtName" runat="server" CssClass="form-control" Width="386px"></asp:TextBox>
+                        </div>
+                        <div class="mb-2">
+                            <label for="inputState" class="form-label">Gender</label>
+                            <asp:DropDownList ID="ddlGender" runat="server" CssClass="form-control" AutoPostBack="True" Height="40px" Width="165px">
+                                <asp:ListItem>Male</asp:ListItem>
+                                <asp:ListItem>Female</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                        <div class="mb-2">
+                            <label for="inputAddress" class="form-label">Address</label>
+                            <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control" Width="385px"></asp:TextBox>
+                        </div>
+                        <div class="mb-2">
+                            <label for="inputCity" class="form-label">City</label>
+                            <asp:TextBox ID="txtCity" runat="server" CssClass="form-control" Width="383px"></asp:TextBox>
 
-                <div class="row mt-3">
-                    <label id="ErrMsg" class="text-danger text-center" runat="server"></label>
+                        </div>
+                        <div class="mb-2">
+                            <label for="inputState" class="form-label">Grade</label>
+                            <asp:DropDownList ID="ddlGrade" runat="server" CssClass="form-control" Width="168px">
+                                <asp:ListItem>1-5</asp:ListItem>
+                                <asp:ListItem>6-11</asp:ListItem>
+                                <asp:ListItem>12-13</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
 
-                    <div class="col-2 d-grid">
-                        <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
-                    </div>
-                    <div class="col-2 d-grid">
-                       <asp:Button ID="btnUpdate" runat="server" Text="UPDATE" />
-                      
-                        
-                      
-                    </div>
-                       <div class="col-2 d-grid">
-                       <asp:Button ID="btnDelete" runat="server" Text="Delete" />
-                      
-                    </div>
-                    <%--  </div>
-                <div class="col-2 d-grid">
-                    <button type="submit" class="btn btn-primary">Create</button>
-                </div>--%>           <%--       <div class="col-4 d-grid">
-      
-      <asp:Button ID="AddBtn" runat="server" Text="Add Student" class="btn btn-primary btn-block" OnClick="Create" />
-  </div>--%>
-          
+                        <div class="row mt-4">
+                            <label id="ErrMsg" runat="server" class="text-danger text-center"></label>
+
+                            <div class="col-3 d-grid">
+                                <asp:Button Style="background-color: #3e82ff;" ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" Width="84px" />
+                            </div>
+                            <div class="col-3 d-grid">
+                                <asp:Button Style="background-color: #3e82ff;" ID="btnUpdate" runat="server" Text="UPDATE" Width="83px" />
+
+                            </div>
+                            <div class="col-3 d-grid">
+                                <asp:Button Style="background-color: #3e82ff;" ID="btnDelete" runat="server" Text="Delete" Width="83px" />
+                            </div>
+                    </td>
+                    <td>
+                        <table width="300" border="0">
+                        </table>
+                    </td>
+                    <td>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h5 class="text-center">Student List </h5>
+                                    <asp:GridView ID="StudentsList" class="table table-hover" runat="server" Width="680px"></asp:GridView>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </table>
+                </div>
+            </from>
+
         </div>
-        </from>
     </div>
-       <div class="row">
-        <h5 class="text-center">Student List</h5>
-        <asp:GridView ID="StudentsList" class="table table-bordered" runat="server"></asp:GridView>
-    </div>
-    </div>
+
+
 </asp:Content>

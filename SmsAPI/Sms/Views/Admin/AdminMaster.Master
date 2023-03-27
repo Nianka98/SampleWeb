@@ -7,7 +7,7 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link rel="stylesheet" href="../../Assets/Lib/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../Assets/Lib/css/bootstrap.min.css">
     <style>
         * {
             font-family: Calibri;
