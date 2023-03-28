@@ -3,13 +3,19 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Mybody" runat="server">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="../../Assets/Lib/css/bootstrap.min.css">
+
     <div class="container-fluid">
         <div class="row">
             <from class="col-md-5">
                 <table>
                     <td>
-    <asp:HiddenField ID="hfID" runat="server" />
+                        <table width="270" border="0">
+                        </table>
+                    </td>
+                    <td>
+                        <asp:HiddenField ID="hfID" runat="server" />
                         <div class="mb-2">
                             <label for="inputEmail4" class="form-label">Student Name</label>
                             <asp:TextBox ID="txtName" runat="server" CssClass="form-control" Width="386px"></asp:TextBox>
@@ -54,7 +60,7 @@
                             </div>
                     </td>
                     <td>
-                        <table width="300" border="0">
+                        <table width="120" border="0">
                         </table>
                     </td>
                     <td>
@@ -87,10 +93,10 @@
                         </div>
                     </td>
                 </table>
-                </div>
-            </from>
-
         </div>
+        </from>
+
+    </div>
     </div>
 
 
