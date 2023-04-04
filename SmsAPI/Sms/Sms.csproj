@@ -125,6 +125,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\123.jpg" />
     <Content Include="Assets\Images\home.jpg" />
     <Content Include="Assets\Images\Logo.png" />
     <Content Include="Assets\Lib\css\bootstrap-grid.css" />
@@ -2086,6 +2087,7 @@
     <Content Include="FrontEnd\plugins\uplot\uPlot.iife.min.js" />
     <Content Include="FrontEnd\plugins\uplot\uPlot.min.css" />
     <Content Include="Views\Admin\Students.aspx" />
+    <Content Include="Views\Admin\StudentView.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -2107,6 +2109,13 @@
     </Compile>
     <Compile Include="Views\Admin\Students.aspx.designer.cs">
       <DependentUpon>Students.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\StudentView.aspx.cs">
+      <DependentUpon>StudentView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\StudentView.aspx.designer.cs">
+      <DependentUpon>StudentView.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -16,8 +16,8 @@ namespace Sms.Views.Admin
 
         private void getStudents()
         {
-            StudentsList.DataSource = studentService.GetStudents();
-            StudentsList.DataBind();
+            //StudentsList.DataSource = studentService.GetStudents();
+            //StudentsList.DataBind();
         }
 
         private void getStudent(int studentID)
@@ -47,15 +47,15 @@ namespace Sms.Views.Admin
 
         protected void StudentsList_RowCommand(object sender, System.Web.UI.WebControls.GridViewCommandEventArgs e)
         {
-            GridViewRow oGridViewRow = StudentsList.Rows[Convert.ToInt32(e.CommandArgument.ToString())];
-            Label lblgvID = (Label)oGridViewRow.FindControl("lblgvID");
+            //GridViewRow oGridViewRow = StudentsList.Rows[Convert.ToInt32(e.CommandArgument.ToString())];
+            //Label lblgvID = (Label)oGridViewRow.FindControl("lblgvID");
 
-            switch (e.CommandName)
-            {
-                case "EditData":
-                    getStudent(Convert.ToInt32(lblgvID.Text));
-                    break;
-            }
+            //switch (e.CommandName)
+            //{
+            //    case "EditData":
+            //        getStudent(Convert.ToInt32(lblgvID.Text));
+            //        break;
+            //}
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
@@ -70,6 +70,9 @@ namespace Sms.Views.Admin
 
             studentService.EditStudent(student);
             getStudents();
+
+            string myParameter = "Student"; // the value you want to pass as a query parameter
+            Response.Redirect("StudentView.aspx?myParameter=" + myParameter);
         }
     }
 }

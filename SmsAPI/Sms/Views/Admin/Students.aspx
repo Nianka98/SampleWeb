@@ -49,17 +49,17 @@
                             <label id="ErrMsg" runat="server" class="text-danger text-center"></label>
 
                             <div class="col-3 d-grid">
-                                <asp:Button Style="background-color: #3e82ff;" ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" Width="84px" />
+                                <asp:Button class="btn btn-danger" ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" Width="100%" />
                             </div>
                             <div class="col-3 d-grid">
-                                <asp:Button Style="background-color: #3e82ff;" ID="btnUpdate" runat="server" Text="UPDATE" Width="83px" OnClick="btnUpdate_Click" />
+                                <asp:Button class="btn btn-danger" ID="btnUpdate" runat="server" Text="UPDATE" Width="100%" OnClick="btnUpdate_Click" />
 
                             </div>
                             <div class="col-3 d-grid">
-                                <asp:Button Style="background-color: #3e82ff;" ID="btnDelete" runat="server" Text="Delete" Width="83px" />
+                                <asp:Button class="btn btn-danger" ID="btnDelete" runat="server" Text="Delete" Width="100%" />
                             </div>
                     </td>
-                    <td>
+                    <%-- <td>
                         <table width="120" border="0">
                         </table>
                     </td>
@@ -82,7 +82,7 @@
                                             <asp:BoundField DataField="Grade" HeaderText="Grade" />
                                             <asp:TemplateField>
                                                 <ItemTemplate>
-                                                    <asp:Button ID="btngvEdit" runat="server" Text="Edit" CommandName="EditData"
+                                                    <asp:Button Style="background-color: #3e82ff;" ID="btngvEdit" runat="server" Text="Edit" CommandName="EditData"
                                                         CommandArgument="<%#Container.DisplayIndex %>" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
@@ -91,8 +91,8 @@
                                 </div>
                             </div>
                         </div>
-                    </td>
-                </table>
+                     </table>
+                    </td>--%>
         </div>
         </from>
 
