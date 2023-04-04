@@ -1,7 +1,6 @@
 ﻿using Sms.Models;
 using Sms.Services;
 using System;
-using System.Web.UI.WebControls;
 
 namespace Sms.Views.Admin
 {
@@ -11,25 +10,24 @@ namespace Sms.Views.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) { getStudents(); }
-        }
+            string studentId = Request.QueryString["studentId"];
 
-        private void getStudents()
-        {
-            //StudentsList.DataSource = studentService.GetStudents();
-            //StudentsList.DataBind();
+            if (!IsPostBack) { getStudent(Convert.ToInt32(studentId)); }
         }
 
         private void getStudent(int studentID)
         {
-            Student student = studentService.GetStudent(studentID);
+            if (studentID != 0)
+            {
+                Student student = studentService.GetStudent(studentID);
 
-            hfID.Value = student.SID.ToString();
-            txtName.Text = student.SName;
-            txtAddress.Text = student.SAddress;
-            txtCity.Text = student.Grade;
-            ddlGender.SelectedValue = student.Gender;
-            ddlGrade.SelectedValue = student.Grade;
+                hfID.Value = student.SID.ToString();
+                txtName.Text = student.SName;
+                txtAddress.Text = student.SAddress;
+                txtCity.Text = student.City;
+                ddlGender.SelectedValue = student.Gender;
+                ddlGrade.SelectedValue = student.Grade;
+            }
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -42,20 +40,12 @@ namespace Sms.Views.Admin
             student.Grade = ddlGrade.SelectedValue;
 
             studentService.AddStudent(student);
-            getStudents();
+            RedirectStudents();
         }
 
-        protected void StudentsList_RowCommand(object sender, System.Web.UI.WebControls.GridViewCommandEventArgs e)
+        private void RedirectStudents()
         {
-            //GridViewRow oGridViewRow = StudentsList.Rows[Convert.ToInt32(e.CommandArgument.ToString())];
-            //Label lblgvID = (Label)oGridViewRow.FindControl("lblgvID");
-
-            //switch (e.CommandName)
-            //{
-            //    case "EditData":
-            //        getStudent(Convert.ToInt32(lblgvID.Text));
-            //        break;
-            //}
+            Response.Redirect("StudentView.aspx", false);
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
@@ -69,10 +59,15 @@ namespace Sms.Views.Admin
             student.Grade = ddlGrade.SelectedValue;
 
             studentService.EditStudent(student);
-            getStudents();
+            RedirectStudents();
+        }
 
-            string myParameter = "Student"; // the value you want to pass as a query parameter
-            Response.Redirect("StudentView.aspx?myParameter=" + myParameter);
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            int studentId = Convert.ToInt32(hfID.Value);
+
+            studentService.DeleteStudent(studentId);
+            RedirectStudents();
         }
     }
 }

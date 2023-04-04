@@ -95,7 +95,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-                        <li class="nav-item">
+                        <%--<li class="nav-item">
                             <a href="Students.aspx" class="nav-link">
                                 <i class="nav-icon far  fa-calendar-alt"></i>
                                 <p>
@@ -103,14 +103,13 @@
                                
                                 </p>
                             </a>
-                        </li>
+                        </li>--%>
 
                         <li class="nav-item">
                             <a href="StudentView.aspx" class="nav-link">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
-                                    Students View
-                               
+                                    Students
                                 </p>
                             </a>
                         </li>
@@ -155,9 +154,11 @@
         <script src="../../FrontEnd/dist/js/pages/dashboard.js"></script>
 
         <form id="form1" runat="server">
-            <div>
+            <div class="content-wrapper">
+                <section class="content">
                 <asp:ContentPlaceHolder ID="Mybody" runat="server">
                 </asp:ContentPlaceHolder>
+                    </section>
             </div>
         </form>
 </body>

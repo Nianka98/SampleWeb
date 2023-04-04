@@ -52,11 +52,11 @@
                                 <asp:Button class="btn btn-danger" ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" Width="100%" />
                             </div>
                             <div class="col-3 d-grid">
-                                <asp:Button class="btn btn-danger" ID="btnUpdate" runat="server" Text="UPDATE" Width="100%" OnClick="btnUpdate_Click" />
+                                <asp:Button class="btn btn-danger" ID="btnUpdate" runat="server" Text="Update" Width="100%" OnClick="btnUpdate_Click" />
 
                             </div>
                             <div class="col-3 d-grid">
-                                <asp:Button class="btn btn-danger" ID="btnDelete" runat="server" Text="Delete" Width="100%" />
+                                <asp:Button class="btn btn-danger" ID="btnDelete" runat="server" Text="Delete" Width="100%" OnClick="btnDelete_Click" />
                             </div>
                     </td>
                     <%-- <td>

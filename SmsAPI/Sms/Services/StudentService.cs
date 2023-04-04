@@ -81,5 +81,24 @@ namespace Sms.Services
             }
             return webApiResponse;
         }
+
+        public WebApiResponse DeleteStudent(int studentId)
+        {
+            WebApiResponse webApiResponse = new WebApiResponse();
+            using (HttpClient client = new HttpClient())
+            {
+                string path = "Student/"+studentId;
+                client.BaseAddress = new Uri(GlobalVariables.WebApiUrl);
+
+                //var json = JsonConvert.SerializeObject(student);
+                //var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = client.DeleteAsync(path).Result;
+                webApiResponse.StatusCode = Convert.ToInt32(response.StatusCode);
+                webApiResponse.IsSuccess = (webApiResponse.StatusCode == (int)StatusCode.Success) ? true : false;
+                webApiResponse.Result = response.Content.ReadAsStringAsync().Result;
+            }
+            return webApiResponse;
+        }
     }
 }

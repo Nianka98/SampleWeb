@@ -1,17 +1,13 @@
 ﻿using Sms.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Xml.Linq;
 
 namespace Sms.Views.Admin
 {
     public partial class StudentView : System.Web.UI.Page
     {
         private StudentService studentService = new StudentService();
+
         protected void Page_Load(object sender, EventArgs e)
         //{
         //    if (!IsPostBack) { getStudents(); }
@@ -25,7 +21,6 @@ namespace Sms.Views.Admin
 
         //protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         //{
-
         //}
         {
             if (!IsPostBack) { getStudents(); }
@@ -37,8 +32,10 @@ namespace Sms.Views.Admin
             StudentsList.DataBind();
         }
 
-        private void getStudent(int studentID)
+        private void ShowStudent(int studentID)
         {
+            Response.Redirect("Students.aspx?studentId=" + studentID, false);
+
             //Student student = studentService.GetStudent(studentID);
 
             //hfID.Value = student.SID.ToString();
@@ -70,7 +67,7 @@ namespace Sms.Views.Admin
             switch (e.CommandName)
             {
                 case "EditData":
-                    getStudent(Convert.ToInt32(lblgvID.Text));
+                    ShowStudent(Convert.ToInt32(lblgvID.Text));
                     break;
             }
         }
@@ -87,6 +84,11 @@ namespace Sms.Views.Admin
 
             //studentService.EditStudent(student);
             //getStudents();
+        }
+
+        protected void btnAddNew_Click(object sender, EventArgs e)
+        {
+            ShowStudent(0);
         }
     }
 }

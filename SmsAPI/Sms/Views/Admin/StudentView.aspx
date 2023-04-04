@@ -6,43 +6,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="../../Assets/Lib/css/bootstrap.min.css">
 
-    <%--    <table>
-        <td>
-            <table width="300" border="0">
-            </table>
-            <td>
-                <h1>Student View</h1>
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
-                    <Columns>
-                        <asp:BoundField DataField="SID" HeaderText="SID" />
-                        <asp:BoundField DataField="SName" HeaderText="Name" />
-                        <asp:BoundField DataField="Gender" HeaderText="Gender" />
-                        <asp:BoundField DataField="SAddress" HeaderText="Address" />
-                        <asp:BoundField DataField="City" HeaderText="City" />
-                        <asp:BoundField DataField="Grade" HeaderText="Grade" />
-                        <asp:TemplateField>
-                            <ItemTemplate>
-                                <asp:Button ID="btngvEdit" runat="server" Text="Edit" CommandName="Edit"/>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                    </Columns>
-                </asp:GridView>
-            </td>
 
-        </td>
-        <td>--%>
+    <div class="content">
 
-    <div class="container-fluid">
-        <div class="row">
-            <from class="col-md-5">
-                <table>
-                    <td>
-                        <table width="270" border="0">
-                        </table>
-                    </td>
-                    <td>
-                        <h5 class="text-center">Student List </h5>
-                        <asp:GridView ID="StudentsList" class="table table-hover" runat="server" Width="680px" AutoGenerateColumns="False" OnRowCommand="StudentsList_RowCommand">
+              <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Students</h3>
+            </div>
+                  <div class="card-body">
+              <asp:Button ID="btnAddNew" runat="server" Text="Add New" OnClick="btnAddNew_Click" />
+                       <asp:GridView ID="StudentsList" class="table table-hover" runat="server" Width="680px" AutoGenerateColumns="False" OnRowCommand="StudentsList_RowCommand">
                             <Columns>
                                 <asp:TemplateField HeaderText="SID" Visible="False">
                                     <ItemTemplate>
@@ -62,9 +35,7 @@
                                 </asp:TemplateField>
                             </Columns>
                         </asp:GridView>
-        </div>
+                  </div>
+                  </div>
     </div>
-    </div>
-                     </table>
-                    </td>
 </asp:Content>
