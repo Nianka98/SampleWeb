@@ -34,5 +34,7 @@ namespace SmsAPI.Migrations
             migrationBuilder.DropTable(
                 name: "Students");
         }
+
+        
     }
 }

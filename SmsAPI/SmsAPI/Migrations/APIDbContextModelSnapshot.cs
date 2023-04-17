@@ -21,6 +21,31 @@ namespace SmsAPI.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("SmsAPI.Models.Grade", b =>
+                {
+                    b.Property<int>("GID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GID"));
+
+                    b.Property<string>("Course")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SGrade")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StudentName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("GID");
+
+                    b.ToTable("Grades");
+                });
+
             modelBuilder.Entity("SmsAPI.Models.Student", b =>
                 {
                     b.Property<int>("SID")
@@ -51,7 +76,7 @@ namespace SmsAPI.Migrations
 
                     b.HasKey("SID");
 
-                    b.ToTable("Students", (string)null);
+                    b.ToTable("Students");
                 });
 #pragma warning restore 612, 618
         }

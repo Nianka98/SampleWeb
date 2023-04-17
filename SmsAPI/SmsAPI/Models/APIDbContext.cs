@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SmsAPI.Models;
 
 namespace SmsAPI.Models
 {
@@ -11,5 +12,8 @@ namespace SmsAPI.Models
         }
 
         public DbSet<Student> Students { get; set; }
+
+        public DbSet<Grade>Grades { get; set; }
+        public object StGrade { get; internal set; }
     }
 }

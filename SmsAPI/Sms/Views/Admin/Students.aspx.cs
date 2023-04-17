@@ -46,6 +46,7 @@ namespace Sms.Views.Admin
         private void RedirectStudents()
         {
             Response.Redirect("StudentView.aspx", false);
+          //  Response.Redirect("StudentGrade.aspx", false);
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
