@@ -9,33 +9,33 @@
 
     <div class="content">
 
-              <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Students</h3>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Students</h3>
             </div>
-                  <div class="card-body">
-              <asp:Button ID="btnAddNew" runat="server" Text="Add New" OnClick="btnAddNew_Click" />
-                       <asp:GridView ID="StudentsList" class="table table-hover" runat="server" Width="680px" AutoGenerateColumns="False" OnRowCommand="StudentsList_RowCommand">
-                            <Columns>
-                                <asp:TemplateField HeaderText="SID" Visible="False">
-                                    <ItemTemplate>
-                                        <asp:Label ID="lblgvID" runat="server" Text='<%# Bind("SID") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:BoundField DataField="SName" HeaderText="Name" />
-                                <asp:BoundField DataField="Gender" HeaderText="Gender" />
-                                <asp:BoundField DataField="SAddress" HeaderText="Address" />
-                                <asp:BoundField DataField="City" HeaderText="City" />
-                                <asp:BoundField DataField="Grade" HeaderText="Grade" />
-                                <asp:TemplateField>
-                                    <ItemTemplate>
-                                        <asp:Button class="btn btn-danger" ID="btngvEdit" runat="server" Text="Edit" CommandName="EditData"
-                                            CommandArgument="<%#Container.DisplayIndex %>" />
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                            </Columns>
-                        </asp:GridView>
-                  </div>
-                  </div>
+            <div class="card-body">
+                <asp:Button ID="btnAddNew" runat="server" Text="Add New" OnClick="btnAddNew_Click" />
+                <asp:GridView ID="StudentsList" class="table table-hover" runat="server" Width="680px" AutoGenerateColumns="False" OnRowCommand="StudentsList_RowCommand">
+                    <Columns>
+                        <asp:TemplateField HeaderText="SID" Visible="False">
+                            <ItemTemplate>
+                                <asp:Label ID="lblgvID" runat="server" Text='<%# Bind("SID") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:BoundField DataField="SName" HeaderText="Name" />
+                        <asp:BoundField DataField="Gender" HeaderText="Gender" />
+                        <asp:BoundField DataField="SAddress" HeaderText="Address" />
+                        <asp:BoundField DataField="City" HeaderText="City" />
+                        <asp:BoundField DataField="Grade" HeaderText="Grade" />
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                <asp:Button class="btn btn-primary" ID="btngvEdit" runat="server" Text="Edit" CommandName="EditData"
+                                    CommandArgument="<%#Container.DisplayIndex %>" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
+            </div>
+        </div>
     </div>
 </asp:Content>

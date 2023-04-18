@@ -5,8 +5,97 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Mybody" runat="server">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="../../Assets/Lib/css/bootstrap.min.css">
+    </head>
+    <body class="hold-transition sidebar-mini">
+        <div class="wrapper">
 
-    <div class="container-fluid">
+            <div class="card"></div>
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- left column -->
+                        <div class="col-md-6">
+                            <!-- general form elements -->
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">Grade</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <!-- form start -->
+                                <form>
+                                    <div class="card-body">
+                                        <asp:HiddenField ID="hfID" runat="server" />
+                                        <div class="mb-2">
+                                            <label for="inputEmail4" class="form-label">Student Name</label>
+                                            <asp:TextBox ID="txtName" runat="server" CssClass="form-control" Width="386px"></asp:TextBox>
+                                        </div>
+                                        <div class="mb-2">
+                                            <label for="inputState" class="form-label">Gender</label>
+                                            <asp:DropDownList ID="ddlGender" runat="server" CssClass="form-control" AutoPostBack="True" Height="40px" Width="165px">
+                                                <asp:ListItem>Male</asp:ListItem>
+                                                <asp:ListItem>Female</asp:ListItem>
+                                            </asp:DropDownList>
+                                        </div>
+                                        <div class="mb-2">
+                                            <label for="inputAddress" class="form-label">Address</label>
+                                            <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control" Width="385px"></asp:TextBox>
+                                        </div>
+                                        <div class="mb-2">
+                                            <label for="inputCity" class="form-label">City</label>
+                                            <asp:TextBox ID="txtCity" runat="server" CssClass="form-control" Width="383px"></asp:TextBox>
+
+                                        </div>
+                                        <div class="mb-2">
+                                            <label for="inputState" class="form-label">Grade</label>
+                                            <asp:DropDownList ID="ddlGrade" runat="server" CssClass="form-control" Width="168px">
+                                                <asp:ListItem>1-5</asp:ListItem>
+                                                <asp:ListItem>6-11</asp:ListItem>
+                                                <asp:ListItem>12-13</asp:ListItem>
+                                            </asp:DropDownList>
+                                        </div>
+
+                                        <!-- /.card-body -->
+
+                                        <div class="row mt-4">
+                                            <label id="ErrMsg" runat="server" class="text-primary text-center"></label>
+
+                                            <div class="col-3 d-grid">
+                                                <asp:Button class="btn btn-primary" ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" Width="100%" />
+                                            </div>
+                                            <div class="col-3 d-grid">
+                                                <asp:Button class="btn btn-primary" ID="btnUpdate" runat="server" Text="Update" Width="100%" OnClick="btnUpdate_Click" />
+
+                                            </div>
+                                            <div class="col-3 d-grid">
+                                                <asp:Button class="btn btn-primary" ID="btnDelete" runat="server" Text="Delete" Width="100%" OnClick="btnDelete_Click" />
+                                            </div>
+                                </form>
+                            </div>
+                            <!-- /.card -->
+
+
+
+
+                            <!-- jQuery -->
+                            <script src="../../plugins/jquery/jquery.min.js"></script>
+                            <!-- Bootstrap 4 -->
+                            <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+                            <!-- bs-custom-file-input -->
+                            <script src="../../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+                            <!-- AdminLTE App -->
+                            <script src="../../dist/js/adminlte.min.js"></script>
+                            <!-- AdminLTE for demo purposes -->
+                            <script src="../../dist/js/demo.js"></script>
+                            <!-- Page specific script -->
+                            <script>
+                                $(function () {
+                                    bsCustomFileInput.init();
+                                });
+</script>
+    </body>
+    </html>
+    <%--    <div class="container-fluid">
         <div class="row">
             <from class="col-md-5">
                 <table>
@@ -59,45 +148,10 @@
                                 <asp:Button class="btn btn-danger" ID="btnDelete" runat="server" Text="Delete" Width="100%" OnClick="btnDelete_Click" />
                             </div>
                     </td>
-                    <%-- <td>
-                        <table width="120" border="0">
-                        </table>
-                    </td>
-                    <td>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <h5 class="text-center">Student List </h5>
-                                    <asp:GridView ID="StudentsList" class="table table-hover" runat="server" Width="680px" AutoGenerateColumns="False" OnRowCommand="StudentsList_RowCommand">
-                                        <Columns>
-                                            <asp:TemplateField HeaderText="SID" Visible="False">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="lblgvID" runat="server" Text='<%# Bind("SID") %>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:BoundField DataField="SName" HeaderText="Name" />
-                                            <asp:BoundField DataField="Gender" HeaderText="Gender" />
-                                            <asp:BoundField DataField="SAddress" HeaderText="Address" />
-                                            <asp:BoundField DataField="City" HeaderText="City" />
-                                            <asp:BoundField DataField="Grade" HeaderText="Grade" />
-                                            <asp:TemplateField>
-                                                <ItemTemplate>
-                                                    <asp:Button Style="background-color: #3e82ff;" ID="btngvEdit" runat="server" Text="Edit" CommandName="EditData"
-                                                        CommandArgument="<%#Container.DisplayIndex %>" />
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                        </Columns>
-                                    </asp:GridView>
-                                </div>
-                            </div>
-                        </div>
-                     </table>
-                    </td>--%>
+                 
         </div>
         </from>
 
     </div>
-    </div>
-
-
+    </div>--%>
 </asp:Content>
