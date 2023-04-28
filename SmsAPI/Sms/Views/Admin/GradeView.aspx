@@ -14,7 +14,7 @@
                 <h3 class="card-title">Grades</h3>
             </div>
             <div class="card-body">
-                <asp:Button ID="btnAddGNew" runat="server" Text="Add New" OnClick="btnAddGNew_Click" />
+                <asp:Button class="btn btn-primary" ID="btnAddGNew" runat="server" Text="Add New" OnClick="btnAddGNew_Click" />
                 <asp:GridView ID="GradesList" class="table table-hover" runat="server" Width="680px" AutoGenerateColumns="False" OnRowCommand="GradesList_RowCommand">
                     <Columns>
                         <asp:TemplateField HeaderText="GID" Visible="False">
