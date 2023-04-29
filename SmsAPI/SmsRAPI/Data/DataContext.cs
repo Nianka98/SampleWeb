@@ -15,8 +15,6 @@ namespace SmsRAPI.Data
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer("Data Source=DESKTOP-F6FMHLM\\MSSQLSERVER1;Initial Catalog=superherodb;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
         }
-
-
         public DbSet<Grade> Grades { get; set; }
         public DbSet<Student> Students { get; set; }
     }
