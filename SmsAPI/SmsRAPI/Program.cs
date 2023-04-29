@@ -13,8 +13,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<ISuperHeroService, SuperHeroService>();
+
 builder.Services.AddScoped<IGradeService, GradeRepService>();
+builder.Services.AddScoped<IStudentService, StudentRepService>();
 builder.Services.AddDbContext<DataContext>();
 
 ////Dependency Injection of DbContext Class
